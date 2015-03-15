@@ -1,0 +1,15 @@
+<p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+  <strong>Written by:</strong>
+  <%= comment.user.name%>
+  <strong>Likes:</strong>
+  <%= comment.get_likes().size%>
+  <%= link_to "Like", article_comment_like_path(@article, comment), method: :put %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Comment', [comment.article, comment],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p>
